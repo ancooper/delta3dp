@@ -1,14 +1,15 @@
 // Ancooper delta 3D printer
 
 include <config.scad>;
+include <properties.scad>;
 use <corner.scad>;
 
 // Result
 
 
 module anc_couple_corner(){
-	translate([0, -19, 0]) rotate([0, 0, 30]) anc_corner();
-	translate([0, 19, 0]) rotate([0, 0, -30]) anc_corner();
+	translate([0, -19, 0]) rotate([0, 0, 30]) anc_corner_v2();
+	translate([0, 19, 0]) rotate([0, 0, -30]) anc_corner_v2();
 	translate([-32, 0, 0])rotate([90, 0, 0]) cylinder(h = 60, r = 4, center = true);
 }
 

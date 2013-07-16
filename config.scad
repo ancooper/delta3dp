@@ -2,4 +2,5 @@
 
 // Configuration
 
+anc_epsilon = 1.01;
 $fn = 64;
