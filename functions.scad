@@ -31,7 +31,20 @@ module anc_rail(length, width, hwidth, height, hheight){
 	}
 }
 
+module anc_bearing(d1, d2, w, center = false){
+	difference(){
+		cylinder(h = w, r = 0.5*d1, center = center);
+		translate([0, 0, -0.25*w*(anc_epsilon-1)]) cylinder(h = w*anc_epsilon, r = 0.5*d2, center = center);
+	}
+}
+
+module anc_bearing_7x3x2(color = "LightSlateGray"){
+	color(color) anc_bearing(7, 3, 2, center = true);
+}
+
 // End
 
 //anc_rcube([20, 20, 5], r = 5, center = true);
 //anc_rail(25, 5, 2, 12, 1);
+//anc_bearing(2, 3.5, 1.5);
+anc_bearing_7x3x2();

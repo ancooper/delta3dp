@@ -4,6 +4,7 @@ include <config.scad>;
 include <properties.scad>;
 use <corner.scad>;
 use <stepper_holder.scad>;
+use <carriage.scad>;
 
 // Result printer
 
@@ -25,6 +26,14 @@ module tricorner(){
 		rotate([0, 0, 180+120*i]) translate([-anc_printer_radious, 0, 0]) color(anc_corner_color) anc_corner();
 		rotate([0, 0, 120*i]) link();
 	}
+}
+
+for(i=[0:2]) rotate([0, 0, 180+120*i]) translate([-anc_printer_radious, 0, 360]) color(anc_corner_color){
+	anc_carriage_rods();
+	anc_carriage_bearings();
+	anc_carriage_spheres();
+	anc_carriage();
+	rotate([180, 0, 0]) anc_carriage();
 }
 
 module link(){
