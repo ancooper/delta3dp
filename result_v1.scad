@@ -28,7 +28,7 @@ module tricorner(){
 	}
 }
 
-for(i=[0:2]) rotate([0, 0, 180+120*i]) translate([-anc_printer_radious, 0, 360]) color(anc_corner_color){
+for(i=[0:2]) rotate([0, 0, 180+120*i]) translate([-anc_printer_radious, 0, 360]){
 	anc_carriage_rods();
 	anc_carriage_bearings();
 	anc_carriage_spheres();
